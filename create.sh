@@ -1,7 +1,7 @@
 #!/bin/bash
 set -o errexit
 clear
-printf "\n*** This script will download a cloud image and create a Proxmox VM from it. ***\n\n"
+printf "\n*** This script will download a cloud image and create a Proxmox VM. ***\n\n"
 ## TODO
 ## - verify authenticity of downloaded images using hash or GPG
 printf "* Available templates to generate:\n 1) Debian 11\n 2) Centos 7\n 3) Ubuntu 20.04\n 4) Cloudlinux 8.5 + Cpanel\n 5) Cloudlinux 7.9 + Cpanel\n\n"
@@ -67,7 +67,7 @@ esac
     && bzip2 -d --force /tmp/$VMIMAGE \
     && VMIMAGE=$(echo "${VMIMAGE%.*}") # remove .bz2 file extension from file name
 	
-## TODO: Also ask for a network configuration. Or create a config with routing for a static IP
+## TODO: Creating Config VM
 printf "\n*** Config VM .\n"
 read -p ' Input Hostname for Virtual Machine (exp : iwasyourfather.end ) : ' VMNAME
 read -p ' Input your username for Virtual Machine : ' VMUSER
