@@ -8,7 +8,6 @@ printf "* Available templates to generate:\n 1) Debian 11\n 2) Centos 7\n 3) Ubu
 read -p "* Enter number of distro to use: " OSPROX
 NODEPROX="($hostname)"
 
-
 case $OSPROX in
 
   1)
