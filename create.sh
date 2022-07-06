@@ -4,7 +4,7 @@ clear
 printf "\n*** This script will download a cloud image and create a Proxmox VM from it. ***\n\n"
 ## TODO
 ## - verify authenticity of downloaded images using hash or GPG
-printf "* Available templates to generate:\n 1) Debian 11\n 2) Centos 7\n 3) Ubuntu 20.04\n 4) Cloudlinux 8.5 + Cpanel\n\n"
+printf "* Available templates to generate:\n 1) Debian 11\n 2) Centos 7\n 3) Ubuntu 20.04\n 4) Cloudlinux 8.5 + Cpanel\n 5) Cloudlinux 7.9 + Cpanel\n\n"
 read -p "* Enter number of distro to use: " OSPROX
 NODEPROX="($hostname)"
 
