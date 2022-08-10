@@ -4,7 +4,7 @@ clear
 printf "\n*** This script will download a cloud image and create a Proxmox VM. ***\n\n"
 ## TODO
 ## - verify authenticity of downloaded images using hash or GPG
-printf "* Available templates to generate:\n 1) Debian 11\n 2) Centos 7\n 3) Ubuntu 20.04\n 4) Cloudlinux 8.5 + Cpanel\n 5) Cloudlinux 7.9 + Cpanel\n\n"
+printf "* Available templates to generate:\n 1) Debian 11\n 2) Centos 7\n 3) Ubuntu 22.04\n 4) Ubuntu 20.04\n 5) Cloudlinux 8.5 + Cpanel\n 6) Cloudlinux 7.9 + Cpanel\n\n"
 read -p "* Enter number of distro to use: " OSPROX
 NODEPROX="($hostname)"
 
@@ -27,8 +27,17 @@ case $OSPROX in
     VMIMAGE=CentOS-7-x86_64-GenericCloud-2111.qcow2
     wget -P /tmp -N https://cloud.centos.org/centos/7/images/$VMIMAGE
     ;;
-
+    
   3)
+    OSNAME="Ubuntu 20.04"
+    VMID_DEFAULT=900
+    read -p "Enter a VM ID for $OSNAME [$VMID_DEFAULT]: " VMID
+    VMID=${VMID:-$VMID_DEFAULT}
+    VMIMAGE=jammy-server-cloudimg-amd64.img
+    wget -P /tmp -N https://cloud-images.ubuntu.com/jammy/current/$VMIMAGE
+    ;;
+    
+  4)
     OSNAME="Ubuntu 20.04"
     VMID_DEFAULT=900
     read -p "Enter a VM ID for $OSNAME [$VMID_DEFAULT]: " VMID
