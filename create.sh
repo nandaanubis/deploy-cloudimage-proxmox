@@ -46,7 +46,7 @@ case $OSPROX in
     wget -P /tmp -N https://cloud-images.ubuntu.com/focal/current/$VMIMAGE
     ;;
 	
-  4)
+  5)
     OSNAME="Cloudlinux 8.5 + Cpanel"
     VMID_DEFAULT=900
     read -p "Enter a VM ID for $OSNAME [$VMID_DEFAULT]: " VMID
@@ -55,7 +55,7 @@ case $OSPROX in
     wget -P /tmp -N https://download.cloudlinux.com/cloudlinux/images/$VMIMAGE
     ;;
 
-   5)
+   6)
     OSNAME="Cloudlinux 7.9 + Cpanel"
     VMID_DEFAULT=900
     read -p "Enter a VM ID for $OSNAME [$VMID_DEFAULT]: " VMID
