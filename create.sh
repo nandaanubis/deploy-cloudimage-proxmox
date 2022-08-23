@@ -11,7 +11,7 @@ NODEPROX="($hostname)"
 case $OSPROX in
 
   1)
-    OSNAME=Debian 11
+    OSNAME="Debian 11"
     VMID_DEFAULT=900
     read -p "Enter a VM ID for $OSNAME [$VMID_DEFAULT]: " VMID
     VMID=${VMID:-$VMID_DEFAULT}
