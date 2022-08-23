@@ -16,7 +16,7 @@ case $OSPROX in
     read -p "Enter a VM ID for $OSNAME [$VMID_DEFAULT]: " VMID
     VMID=${VMID:-$VMID_DEFAULT}
     VMIMAGE=debian-9-openstack-amd64.qcow2
-    wget -P /tmp -N https://cdimage.debian.org/cdimage/openstack/current-9/$VMIMAGE
+    wget -P /tmp -N https://cdimage.debian.org/cdimage/openstack/current-10/$VMIMAGE
     ;;
 
   2)
