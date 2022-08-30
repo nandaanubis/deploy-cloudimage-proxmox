@@ -4,7 +4,7 @@ clear
 printf "\n*** This script will download a cloud image and create a Proxmox VM. ***\n\n"
 ## TODO
 ## - verify authenticity of downloaded images using hash or GPG
-printf "* Available templates to generate:\n 1) Debian 11\n 2) Centos 7\n 3) Ubuntu 22.04\n 4) Ubuntu 20.04\n 5) Cloudlinux 8.5 + Cpanel\n 6) Cloudlinux 7.9 + Cpanel\n\n"
+printf "* Available templates to generate:\n 1) Debian 11\n 2) Centos 7\n 3) Ubuntu 22.04\n 4) Ubuntu 20.04\n 5) Ubuntu 18.04\n 6) Cloudlinux 8.5 + Cpanel\n 7) Cloudlinux 7.9 + Cpanel\n\n"
 read -p "* Enter number of distro to use: " OSPROX
 NODEPROX="($hostname)"
 
@@ -29,7 +29,7 @@ case $OSPROX in
     ;;
     
   3)
-    OSNAME="Ubuntu 20.04"
+    OSNAME="Ubuntu 22.04"
     VMID_DEFAULT=900
     read -p "Enter a VM ID for $OSNAME [$VMID_DEFAULT]: " VMID
     VMID=${VMID:-$VMID_DEFAULT}
@@ -45,8 +45,17 @@ case $OSPROX in
     VMIMAGE=focal-server-cloudimg-amd64.img
     wget -P /tmp -N https://cloud-images.ubuntu.com/focal/current/$VMIMAGE
     ;;
+    
+   5)
+    OSNAME="Ubuntu 18.04"
+    VMID_DEFAULT=900
+    read -p "Enter a VM ID for $OSNAME [$VMID_DEFAULT]: " VMID
+    VMID=${VMID:-$VMID_DEFAULT}
+    VMIMAGE=bionic-server-cloudimg-amd64.img
+    wget -P /tmp -N https://cloud-images.ubuntu.com/bionic/current/$VMIMAGE
+    ;;
 	
-  5)
+  6)
     OSNAME="Cloudlinux 8.5 + Cpanel"
     VMID_DEFAULT=900
     read -p "Enter a VM ID for $OSNAME [$VMID_DEFAULT]: " VMID
@@ -55,7 +64,7 @@ case $OSPROX in
     wget -P /tmp -N https://download.cloudlinux.com/cloudlinux/images/$VMIMAGE
     ;;
 
-   6)
+   7)
     OSNAME="Cloudlinux 7.9 + Cpanel"
     VMID_DEFAULT=900
     read -p "Enter a VM ID for $OSNAME [$VMID_DEFAULT]: " VMID
