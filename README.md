@@ -16,3 +16,5 @@ How to create VM base on ZFS ( like ZFS-Data ) storage Proxmox
 
 How to create VM base on lvmthin ( like local-lvm ) storage Proxmox
 1. bash create-lvmthin.sh
+
+![Sample Capture](img/screnshoot.jpg)
