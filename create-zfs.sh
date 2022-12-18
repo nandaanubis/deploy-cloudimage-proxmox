@@ -121,7 +121,7 @@ printf "\n** Create Username and password\n"
 qm set $VMID --cipassword="$VMPASS" --ciuser=$VMUSER &> /dev/null
 printf "\n** Update Size \n"
 sleep 30
-qm resize $VMID scsi0 $VMSTOR &> /dev/null
+qm resize $VMID scsi0 +$VMSTOR &> /dev/null
 
 printf "\n** VM Create status : Done\n"
 echo=""
