@@ -15,8 +15,8 @@ case $OSPROX in
     VMID_DEFAULT=900
     read -p "Enter a VM ID for $OSNAME [$VMID_DEFAULT]: " VMID
     VMID=${VMID:-$VMID_DEFAULT}
-    VMIMAGE=debian-11-genericcloud-amd64-daily-20221109-1194.qcow2
-    wget -P /tmp -N https://cloud.debian.org/images/cloud/bullseye/daily/20221109-1194/$VMIMAGE
+    VMIMAGE=debian-11-genericcloud-amd64-daily-20230405-1341.qcow2
+    wget -P /tmp -N https://cloud.debian.org/images/cloud/bullseye/daily/20230405-1341/$VMIMAGE
     ;;
 
   2)
